@@ -5,7 +5,7 @@ const AEM_HOST = checkDomain()
 
 function checkDomain(){
   if (window.location.hostname.includes("hlx.page") || window.location.hostname.includes("localhost")){
-    return "https://author-p46820-e1400905.adobeaemcloud.com/"   
+    return "https://author-p46820-e1400905.adobeaemcloud.com"   
   }else{
     return window.location.origin 
   }
