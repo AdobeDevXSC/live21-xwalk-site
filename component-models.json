@@ -211,17 +211,28 @@
     ]
   },
   {
-    "id": "content-fragment",
+    "id": "content-fragment-offer",
     "fields": [
       {
-        "component": "text-input",
-        "name": "text",
+        "component": "aem-content-fragment",
+        "name": "path",
         "value": "",
-        "label": "Slug",
+        "label": "Content Fragment path",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "variation",
+        "value": "",
+        "label": "Variation",
+        "valueType": "string",
+        "options": [
+          { "name": "Default", "value": "master" },
+          { "name": "Variation 1", "value": "Variation 1" }
+        ]
       }
     ]
-  },  
+  },
   {
     "id": "article-content-fragment",
     "fields": [
