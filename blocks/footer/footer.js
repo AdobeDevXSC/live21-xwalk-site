@@ -1,4 +1,4 @@
-import { decorateIcons, getMetadata } from '../../scripts/lib-franklin.js';
+import { decorateIcons, getMetadata } from '../../scripts/aem.js';
 import { getSiteRoot } from '../../scripts/scripts.js';
 
 /**
