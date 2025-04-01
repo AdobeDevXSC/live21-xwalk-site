@@ -18,8 +18,8 @@ import {
   toCamelCase,
   toClassName
 } from './aem.js';
-import { getProduct, getSkuFromUrl, trackHistory } from './commerce.js';
-import initializeDropins from './dropins.js';
+//import { getProduct, getSkuFromUrl, trackHistory } from './commerce.js';
+//import initializeDropins from './dropins.js';
 
 const LCP_BLOCKS = [
   'product-list-page',
