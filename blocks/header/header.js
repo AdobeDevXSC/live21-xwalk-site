@@ -1,4 +1,4 @@
-import { decorateIcons, getMetadata } from '../../scripts/aem.jsjs';
+import { decorateIcons, getMetadata } from '../../scripts/aem.js';
 import { getSiteRoot } from '../../scripts/scripts.js';
 /**
  * collapses all open nav sections
