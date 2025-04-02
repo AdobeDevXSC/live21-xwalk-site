@@ -136,7 +136,8 @@ function setActiveTab() {
  */
 export default async function decorate(block) {
   // load nav as fragment
-  const navMeta = getMetadata('nav');
+  //const navMeta = getMetadata('nav');
+  const navMeta = '/fragments/nav';
   /* eslint-disable-next-line no-console */
   console.log(`navMeta = ${navMeta}`);
   const navPath = navMeta || '/nav'; // navMeta ? new URL(navMeta).pathname : '/nav';
