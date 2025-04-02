@@ -1,36 +1,26 @@
-import { decorateIcons, getMetadata } from '../../scripts/aem.js';
-import { getSiteRoot } from '../../scripts/scripts.js';
+/* eslint-disable no-console */
+import { getMetadata } from '../../scripts/aem.js';
+import { loadFragment } from '../fragment/fragment.js';
 
 /**
  * loads and decorates the footer
- * @param {Element} block The header block element
+ * @param {Element} block The footer block element
  */
-
 export default async function decorate(block) {
+  // load footer as fragment
   const footerMeta = getMetadata('footer');
-  const navPath = footerMeta ? new URL(footerMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/footer');
-  const footerPath = footerMeta ? new URL(footerMeta).pathname : '/footer';
+  console.log(`footerMeta = ${footerMeta}`);
+  console.log(`footerMeta footer = ${footerMeta.footer}`);
+  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer'; /* footerMeta.footer || '/footer'; */
+  console.log(`footerPath = ${footerPath}`);
+  //  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+  const fragment = await loadFragment(footerPath);
 
-  let footerURL = `${getSiteRoot(5)}${navPath}.plain.html`;
-  let updatedFooterUrl = footerURL.replace(/about-us\/|faqs\/|index-demo\/|magazine\/.+\/|adventures\/.+\//g, "/");
+  // decorate footer DOM
+  block.textContent = '';
+  const footer = document.createElement('div');
+  footer.classList.add('wrapper');
+  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
-  const resp = await fetch(updatedFooterUrl.replace("//", "/"), window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
-  /*const resp = await fetch(`${footerPath}.plain.html`);*/
-
-  if (resp.ok) {
-    block.textContent = '';
-
-    const html = await resp.text();
-    const footer = document.createElement('div');
-    footer.innerHTML = html;
-    await decorateIcons(footer);
-
-    const classes = ['brand', 'nav', 'follow', 'disc'];
-    let f = footer.firstElementChild;
-    while (f && classes.length) {
-      f.classList.add(classes.shift());
-      f = f.nextElementSibling;
-    }
-    block.append(footer);
-  }
+  block.append(footer);
 }
