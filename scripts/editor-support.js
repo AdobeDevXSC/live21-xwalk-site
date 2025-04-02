@@ -5,8 +5,8 @@ import {
   decorateIcons,
   decorateSections,
   loadBlock,
-  loadBlocks,
-} from './lib-franklin.js';
+  loadSections,
+} from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 import { updateButtons } from '../blocks/carousel/carousel.js';
