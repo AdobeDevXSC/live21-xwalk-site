@@ -228,6 +228,10 @@
         "valueType": "string",
         "options": [
           { "name": "Default", "value": "master" },
+          { "name": "Variation 1", "value": "Variation 1" },
+          { "name": "Variation 1", "value": "Variation 2" },
+          { "name": "Variation 1", "value": "Variation 3" },
+          { "name": "Variation 1", "value": "Variation 4" },
           { "name": "Variation 1", "value": "Variation 1" }
         ]
       }
