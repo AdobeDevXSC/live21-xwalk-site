@@ -14,8 +14,10 @@ export default async function decorate(block) {
   let footerURL = `${getSiteRoot(4)}/footer.plain.html`;
   let updatedFooterUrl = footerURL.replace(/about-us\/|faqs\/|index-demo\/|magazine\/.+\/|adventures\/.+\//g, "/");
 
-  //const resp = await fetch(updatedFooterUrl.replace("//", "/"), window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
-  const resp = await fetch(`${footerPath}.plain.html`);
+  console.log(updatedFooterUrl);
+
+  const resp = await fetch(updatedFooterUrl.replace("//", "/"), window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
+  //const resp = await fetch(`${footerPath}.plain.html`);
 
   if (resp.ok) {
     block.textContent = '';
