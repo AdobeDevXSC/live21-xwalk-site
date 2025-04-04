@@ -20,7 +20,7 @@ export default async function decorate(block) {
   // fetch nav content
   const navMeta = getMetadata('nav');
   //const navPath = navMeta ? new URL(navMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/nav');
-  const navPath = footerMeta ? new URL(navMeta).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta).pathname : '/nav';
 
   let navURL = `${getSiteRoot(5)}/nav.plain.html`;
   let updatedNavUrl = navURL.replace(/about-us\/|faqs\/|magazine\/.+\/|adventures\/.+\//g, "/");
