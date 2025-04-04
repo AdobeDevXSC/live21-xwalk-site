@@ -7,7 +7,8 @@ import { getSiteRoot } from '../../scripts/scripts.js';
  */
 
 export default async function decorate(block) {
-  const footerMeta = getMetadata('footer');
+  //const footerMeta = getMetadata('footer');
+  const footerMeta = 'https://main--live21-xwalk-site--adobedevxsc.aem.page/us/en'
   //const navPath = footerMeta ? new URL(footerMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/footer');
   //const footerPath = footerMeta ? new URL(footerMeta).pathname : '/footer';
 
