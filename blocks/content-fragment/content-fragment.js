@@ -26,9 +26,7 @@ export default async function decorate(block) {
         Math.random() * 1000
       }`;
   const options = { 
-    method: 'GET',
     credentials: 'include',
-    mode: 'no-cors',
   };
  
   const cfReq = await fetch(url, options)
