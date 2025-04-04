@@ -8,11 +8,11 @@ import { getSiteRoot } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
   //const footerMeta = getMetadata('footer');
-  const footerMeta = 'https://main--live21-xwalk-site--adobedevxsc.aem.page/us/en'
+  //const footerMeta = 'https://main--live21-xwalk-site--adobedevxsc.aem.page/us/en'
   //const navPath = footerMeta ? new URL(footerMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/footer');
   //const footerPath = footerMeta ? new URL(footerMeta).pathname : '/footer';
 
-  let footerURL = `${getSiteRoot(4)}/footer.plain.html`;
+  let footerURL = `https://main--live21-xwalk-site--adobedevxsc.aem.page/us/en/footer.plain.html`;
   let updatedFooterUrl = footerURL.replace(/about-us\/|faqs\/|index-demo\/|magazine\/.+\/|adventures\/.+\//g, "/");
 
   const resp = await fetch(updatedFooterUrl.replace("//", "/"), window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
