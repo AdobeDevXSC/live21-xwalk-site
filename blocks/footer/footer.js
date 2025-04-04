@@ -9,7 +9,7 @@ import { getSiteRoot } from '../../scripts/scripts.js';
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   //const navPath = footerMeta ? new URL(footerMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/footer');
-  //const footerPath = footerMeta ? new URL(footerMeta).pathname : '/footer';
+  const footerPath = footerMeta ? new URL(footerMeta).pathname : '/footer';
 
   let footerURL = `${getSiteRoot(4)}/footer.plain.html`;
   let updatedFooterUrl = footerURL.replace(/about-us\/|faqs\/|index-demo\/|magazine\/.+\/|adventures\/.+\//g, "/");
@@ -17,8 +17,8 @@ export default async function decorate(block) {
   console.log(footerURL)
   console.log(updatedFooterUrl);
 
-  const resp = await fetch(updatedFooterUrl.replace("//", "/"), window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
-  //const resp = await fetch(`${footerPath}.plain.html`);
+  //const resp = await fetch(updatedFooterUrl.replace("//", "/"), window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
+  const resp = await fetch(`${footerPath}.plain.html`);
 
   if (resp.ok) {
     block.textContent = '';
