@@ -25,9 +25,11 @@ export default async function decorate(block) {
     : `${aempublishurl}${persistedquery};path=${contentPath};variation=${variationname};ts=${
         Math.random() * 1000
       }`;
-  const options = { 
-    credentials: 'include',
-  };
+  const options = {
+        method: 'GET',
+        credentials: 'include',
+        mode: 'no-cors',
+      };
  
   const cfReq = await fetch(url, options)
     .then((response) => response.json())
