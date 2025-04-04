@@ -27,7 +27,6 @@ export default async function decorate(block) {
       }`;
   const options = { 
     credentials: 'include',
-    mode: 'cors',
   };
  
   const cfReq = await fetch(url, options)
