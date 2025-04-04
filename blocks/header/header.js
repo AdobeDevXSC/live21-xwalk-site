@@ -20,11 +20,14 @@ export default async function decorate(block) {
   // fetch nav content
   const navMeta = getMetadata('nav');
   //const navPath = navMeta ? new URL(navMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/nav');
+  const navPath = footerMeta ? new URL(navMeta).pathname : '/nav';
 
   let navURL = `${getSiteRoot(5)}/nav.plain.html`;
   let updatedNavUrl = navURL.replace(/about-us\/|faqs\/|magazine\/.+\/|adventures\/.+\//g, "/");
 
-  const resp = await fetch(updatedNavUrl.replace("//", "/"), window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
+  //const resp = await fetch(updatedNavUrl.replace("//", "/"), window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
+  const resp = await fetch(`${navPath}.plain.html`);
+
   if (resp.ok) {
     const html = await resp.text();
 
