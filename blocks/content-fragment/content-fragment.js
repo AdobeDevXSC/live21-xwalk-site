@@ -28,11 +28,13 @@ export default async function decorate(block) {
   const options = {
         method: 'GET',
         credentials: 'include',
-        mode: 'cors',
+        mode: 'no-cors',
       };
  
   const cfReq = await fetch(url, options)
     .then((response) => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
     .then((contentfragment) => {
       let offer = '';
       if (contentfragment.data) {
