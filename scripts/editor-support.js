@@ -7,6 +7,7 @@ import {
   loadBlock,
   loadSections,
 } from './aem.js';
+import { loadBlocks } from './lib-franklin.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 import { updateButtons } from '../blocks/carousel/carousel.js';
