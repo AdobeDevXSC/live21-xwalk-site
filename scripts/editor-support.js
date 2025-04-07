@@ -185,7 +185,7 @@ function attachEventListners(main) {
     event.stopPropagation();
     const applied = await applyChanges(event);
     if (applied) {
-      updateUEInstrumentation();
+      //updateUEInstrumentation();
     } else {
       window.location.reload();
     }
