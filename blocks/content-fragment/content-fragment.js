@@ -29,7 +29,7 @@ export default async function decorate(block) {
         credentials: 'include'
       };
  
-  const cfReq = await fetch(url)
+  const cfReq = await fetch(url, options)
     .then((response) => response.json())    
     .then((contentfragment) => {
       let offer = '';
