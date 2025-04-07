@@ -225,4 +225,4 @@ document.addEventListener('aue:ui-preview', () => {
   });
 });
 
-updateUEInstrumentation();
+//updateUEInstrumentation();
