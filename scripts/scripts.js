@@ -448,7 +448,7 @@ async function loadLazy(doc) {
     import('./acdl/validate.js');
   }
 
-  trackHistory();
+  //trackHistory();
 
   // Implement experimentation preview pill
   if (
