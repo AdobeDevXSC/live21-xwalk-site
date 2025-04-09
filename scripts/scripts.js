@@ -462,7 +462,7 @@ async function loadLazy(doc) {
   }
 
   // Load scheduling sidekick extension
-  import('./scheduling/scheduling.js');
+  //import('./scheduling/scheduling.js');
 }
 
 /**
